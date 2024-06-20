@@ -13,6 +13,10 @@ import { MainComponent } from './main/main.component';
 import { CategoriesComponent } from './pages/categories/categories.component';
 import { PagenotfoundComponent } from './pages/pagenotfound/pagenotfound.component';
 import { FormsModule } from '@angular/forms';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AlertComponent } from './components/alert/alert.component';
+
 // import {FirebaseAppModule} from '@angular/fire/app'
 
 @NgModule({
@@ -22,19 +26,30 @@ import { FormsModule } from '@angular/forms';
     DashboardComponent,
     MainComponent,
     CategoriesComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     FontAwesomeModule,
     FormsModule,
+    ToastrModule.forRoot({
+      // timeOut: 1000,
+      // autoDismiss:true,
+      // toastComponent: AlertComponent,
+      // positionClass: 'toast-bottom-right',
+      // preventDuplicates: true,
+    }),
     // FirebaseAppModule.initializeApp(environment.firebaseConfig)
+
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideFirestore(()=>getFirestore())
   ],
   providers: [
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  // declarations: [App, YourToastComponent],
 })
 export class AppModule { }
