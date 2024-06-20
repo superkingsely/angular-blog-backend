@@ -27,7 +27,7 @@ export class CategoriesComponent implements OnInit{
     }
     console.log(categoryData)
     console.log(form)
-    this.catService.create(categoryData)
+    // this.catService.create(categoryData)
     // check ur service file nw
     // let collectionInit=collection(this.firestore,'categories')
     // addDoc(collectionInit,categoryData)

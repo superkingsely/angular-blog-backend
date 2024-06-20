@@ -5,8 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
-import { provideFirestore, getFirestore } from '@angular/fire/firestore';
+// import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
+// import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { environment } from 'src/enviroments/environment';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { MainComponent } from './main/main.component';
@@ -44,8 +44,8 @@ import { AlertComponent } from './components/alert/alert.component';
     }),
     // FirebaseAppModule.initializeApp(environment.firebaseConfig)
 
-    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
-    provideFirestore(()=>getFirestore())
+    // provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
+    // provideFirestore(()=>getFirestore())
   ],
   providers: [
   ],
