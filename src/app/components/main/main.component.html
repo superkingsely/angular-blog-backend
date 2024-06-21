@@ -1,0 +1,43 @@
+
+  <input type="text" class="border"
+    [(ngModel)]="newitem"
+    [value]="newitem"
+    #input1
+  >
+  <button class="p-2 px-3 bg-green-300"
+  (click)="handleadd(input1.value)"
+  >Add</button> <br>
+  <div *ngIf="isedit">
+
+    <input type="text" class="border"
+     
+      [value]="editvalueobj.item"
+      #input2
+    >
+    <button class="p-2 px-3 bg-green-300"
+    (click)="handlesubmitedit(input2.value)"
+    >Edit</button>
+  </div>
+
+<ul class="list-none m-0 p-0" *ngIf="receiveappdata.length>0;else empty">
+  <ng-container *ngFor="let item of receiveappdata" >
+    <li>
+      <input type="checkbox" name="" id="" [checked]="item.checked"
+      (change)="handlechange(item.id)"
+      
+      >
+      <!-- <input type="hidden" name="" [value]="item.id" #input> -->
+      <label for="" [ngClass]="{'bg-green-300': item.checked}">{{item.item}}</label>
+      <button class="bg-blue-600 px-3 py-1 round-lg"
+      (click)="handleedit(item.id)"
+      >Edit</button>
+      <button class="bg-red-600 px-3 py-1 round-lg"
+      (click)="handledelete(item.id)"
+      >Delete</button>
+    </li>
+  </ng-container>
+</ul>
+<ng-template class="" #empty>
+  <p>empty</p>
+</ng-template>
+
